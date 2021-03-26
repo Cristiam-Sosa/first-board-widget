@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuration</title>
+</head>
+<body>
+<div class="container">
+    <fieldset>
+        <label class="label">Query: </label>
+        <select id="query-path-dropdown" style="margin-top:10px">
+            <option value="" selected disabled hidden>Please select a query</option>
+            <option value="Shared Queries/Feedback">Shared Queries/Feedback</option>
+            <option value="My Queries/Assigned to me">My Queries/Assigned to me</option>
+            <option value="My Queries/Followed work items">My Queries/Followed work items</option>
+        </select>
+    </fieldset>
+    <script src="../lib/VSS.SDK.min.js"></script>
+    <script type="text/javascript">
+      VSS.init({
+        explicitNotifyLoaded: true,
+        usePlatformStyles: true,
+        usePlatformScripts: true,
+        setupModuleLoader: true
+      });
+
+      VSS.ready(function () {
+        VSS.require(["configuration.js"], function (app) { });
+      });
+    </script>
+</div>
+</body>
+</html>

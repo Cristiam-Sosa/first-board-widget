@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="es">
+<head>
+    <title>Hello World 3</title>
+</head>
+<body>
+<div class="widget">
+    <h2 class="title"></h2>
+    <div id="query-info-container"></div>
+    <script src="../lib/VSS.SDK.min.js"></script>
+    <script type="text/javascript">
+      VSS.init({
+        explicitNotifyLoaded: true,
+        usePlatformStyles: true,
+        usePlatformScripts: true,
+        setupModuleLoader: true
+      });
+
+      VSS.ready(function () {
+        VSS.require(["main.js"], function (app) { });
+      });
+    </script>
+</div>
+</body>
+</html>

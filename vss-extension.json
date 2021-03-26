@@ -1,0 +1,94 @@
+{
+  "manifestVersion": 1,
+  "id": "first-board-widget",
+  "publisher": "CristiamSosa",
+  "version": "1.0.0",
+  "name": "First Widget",
+  "description": "Sample widgets extending dashboards",
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/Cristiam-Sosa/first-board-widget"
+  },
+  "icons": {
+    "default": "marketplace/logo.png"
+  },
+  "links": {
+    "repository": {
+      "uri": "https://github.com/Cristiam-Sosa/first-board-widget"
+    },
+    "issues": {
+      "uri": "https://github.com/Cristiam-Sosa/first-board-widget/issues"
+    },
+    "support": {
+      "uri": "https://github.com/Cristiam-Sosa/first-board-widget/issues"
+    }
+  },
+  "categories": [
+    "Azure Boards"
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "scopes": [
+    "vso.work"
+  ],
+  "contributions": [
+    {
+      "id": "FirstWidget",
+      "type": "ms.vss-dashboards-web.widget",
+      "targets": [
+        "ms.vss-dashboards-web.widget-catalog",
+        "CristiamSosa.first-board-widget.FirstWidget.Configuration"
+      ],
+      "properties": {
+        "name": "First Widget",
+        "description": "My first widget",
+        "previewImageUrl": "marketplace/logo.png",
+        "uri": "index.html",
+        "isNameConfigurable": true,
+        "supportedSizes": [
+          {
+            "rowSpan": 1,
+            "columnSpan": 2
+          },
+          {
+            "rowSpan": 2,
+            "columnSpan": 2
+          }
+        ],
+        "supportedScopes": [
+          "project_team"
+        ]
+      }
+    },
+    {
+      "id": "FirstWidget.Configuration",
+      "type": "ms.vss-dashboards-web.widget-configuration",
+      "targets": [
+        "ms.vss-dashboards-web.widget-configuration"
+      ],
+      "properties": {
+        "name": "FirstWidget Configuration",
+        "description": "Configures FirstWidget",
+        "uri": "configuration.html"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "dist",
+      "addressable": true
+    },
+    {
+      "path": "node_modules/vss-web-extension-sdk/lib",
+      "addressable": true,
+      "packagePath": "lib"
+    },
+    {
+      "path": "marketplace",
+      "addressable": true
+    }
+  ]
+}
